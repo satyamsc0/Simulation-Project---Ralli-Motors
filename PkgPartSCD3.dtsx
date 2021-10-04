@@ -1,0 +1,2087 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/13/2021 12:59:10 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-UCIG1N9"
+  DTS:CreatorName="DESKTOP-UCIG1N9\Satyam Chaurasiya"
+  DTS:DTSID="{CCF47DAB-D39C-402D-85E9-5D3C97B41F44}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.167"
+  DTS:LocaleID="16393"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{E6975E42-6826-4B1E-81CD-F4B72F58E942}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[otusdpsql.RALLI.B12021_SChauras]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E7F003FB-C247-4A61-A9A5-9784BFFCE96D}"
+      DTS:ObjectName="otusdpsql.RALLI.B12021_SChauras">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=otusdpsql;User ID=B12021_SChauras;Initial Catalog=RALLI;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT1JwUWBw1EeQiy06+EJ2JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABK7e0QBuIMQFRH05wYJz1XV3hRiRk1RuNuR5lhXT+izQAAAAAOgAAAAAIAACAAAAA+PhfPm2Rls7zJfJeIo9uzylFGCgO8edE510xFbD3NwyAAAACju8PtAtBDtycidEgkHNws++p/Lb173YY0bUr2I60gX0AAAABYWjme7PFiCwTSXSfe4xjJDOjnV54A917aI3gL+ctFCpukfhPM+EvYUQGDxZNNJh+G4LhZbM4dmrb8umm6lkni</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[otusdpsql.Target_B12021_SChauras.B12021_SChauras]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C689DA56-1C6E-4D6E-8570-B44148E94DD7}"
+      DTS:ObjectName="otusdpsql.Target_B12021_SChauras.B12021_SChauras">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=otusdpsql;User ID=B12021_SChauras;Initial Catalog=Target_B12021_SChauras;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT1JwUWBw1EeQiy06+EJ2JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABD2Il1GD2M5i7TzUKwy9Jnz8od6y9v+mHGgvsEqBZtPQAAAAAOgAAAAAIAACAAAAA1HR73l1ahvlj/LYqranWk7dwOlb1B0aqHlNvvhiY7kSAAAABSQfHf4GAv7ixU/k5BI72nH5R3ubO24c8JQV+DDiiTyEAAAAAcCBn8eMAN6Hw8fh81tg9bzsxdW1PQgrEHr+XBSp09xX0WT4XsYjIZqArBDsxaFSYy/zLD/R+4EdNUCZBy/gSr</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Part Table"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F92930B6-CD4E-4217-A1B2-B7A6B154254D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Part Table"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Part Table\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Part Table\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\Data Conversion.Inputs[Data Conversion Input].Columns[PartId]"
+                      cachedDataType="r8"
+                      cachedName="PartId"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PartId]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\Data Conversion.Inputs[Data Conversion Input].Columns[ENABLED]"
+                      cachedDataType="r8"
+                      cachedName="ENABLED"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[ENABLED]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\Data Conversion.Inputs[Data Conversion Input].Columns[PurchasedFlag]"
+                      cachedDataType="r8"
+                      cachedName="PurchasedFlag"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PurchasedFlag]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\Data Conversion.Inputs[Data Conversion Input].Columns[StockedFlag]"
+                      cachedDataType="r8"
+                      cachedName="StockedFlag"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[StockedFlag]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\Data Conversion.Inputs[Data Conversion Input].Columns[InspectionRequiredFlag]"
+                      cachedDataType="r8"
+                      cachedName="InspectionRequiredFlag"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[InspectionRequiredFlag]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\Data Conversion.Inputs[Data Conversion Input].Columns[HazardousMaterialFlag]"
+                      cachedDataType="r8"
+                      cachedName="HazardousMaterialFlag"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[HazardousMaterialFlag]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\Data Conversion.Inputs[Data Conversion Input].Columns[FabricatedFlag]"
+                      cachedDataType="r8"
+                      cachedName="FabricatedFlag"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[FabricatedFlag]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Part Table\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PartId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PartId]"
+                      name="Copy of PartId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PartId]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ENABLED]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ENABLED]"
+                      name="Copy of ENABLED"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[ENABLED]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PurchasedFlag]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PurchasedFlag]"
+                      name="Copy of PurchasedFlag"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PurchasedFlag]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of StockedFlag]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of StockedFlag]"
+                      name="Copy of StockedFlag"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[StockedFlag]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of InspectionRequiredFlag]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of InspectionRequiredFlag]"
+                      name="Copy of InspectionRequiredFlag"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[InspectionRequiredFlag]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of HazardousMaterialFlag]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of HazardousMaterialFlag]"
+                      name="Copy of HazardousMaterialFlag"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[HazardousMaterialFlag]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of FabricatedFlag]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of FabricatedFlag]"
+                      name="Copy of FabricatedFlag"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[FabricatedFlag]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Part Table\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Part Table\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Part Table\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\Derived Column.Inputs[Derived Column Input].Columns[PartSystem]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PartSystem"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PartSystem]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[UPPER]([SUBSTRING](#{Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PartSystem]},1,1)) + [LOWER]([SUBSTRING](#{Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PartSystem]},2,[LEN](#{Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PartSystem]})))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">UPPER(SUBSTRING(PartSystem,1,1)) + LOWER(SUBSTRING(PartSystem,2,LEN(PartSystem)))</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\Derived Column.Inputs[Derived Column Input].Columns[PartSubSystem]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PartSubSystem"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PartSubSystem]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[UPPER]([SUBSTRING](#{Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PartSubSystem]},1,1)) + [LOWER]([SUBSTRING](#{Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PartSystem]},2,[LEN](#{Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PartSystem]})))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">UPPER(SUBSTRING(PartSubSystem,1,1)) + LOWER(SUBSTRING(PartSystem,2,LEN(PartSystem)))</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\Derived Column.Inputs[Derived Column Input].Columns[Description]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Description"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Description]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[UPPER]([SUBSTRING](#{Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Description]},1,1)) + [LOWER]([SUBSTRING](#{Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PartSystem]},2,[LEN](#{Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PartSystem]})))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">UPPER(SUBSTRING(Description,1,1)) + LOWER(SUBSTRING(PartSystem,2,LEN(PartSystem)))</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\Derived Column.Inputs[Derived Column Input].Columns[Copy of ENABLED]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of ENABLED"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ENABLED]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE]([REPLACE](#{Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ENABLED]},"-1","Y"),"0","N")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(REPLACE([Copy of ENABLED],"-1","Y"),"0","N")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\Derived Column.Inputs[Derived Column Input].Columns[Copy of PurchasedFlag]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of PurchasedFlag"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PurchasedFlag]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE]([REPLACE](#{Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PurchasedFlag]},"-1","Y"),"0","N")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(REPLACE([Copy of PurchasedFlag],"-1","Y"),"0","N")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\Derived Column.Inputs[Derived Column Input].Columns[Copy of StockedFlag]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of StockedFlag"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of StockedFlag]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE]([REPLACE](#{Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of StockedFlag]},"-1","Y"),"0","N")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(REPLACE([Copy of StockedFlag],"-1","Y"),"0","N")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\Derived Column.Inputs[Derived Column Input].Columns[Copy of InspectionRequiredFlag]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of InspectionRequiredFlag"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of InspectionRequiredFlag]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE]([REPLACE](#{Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of InspectionRequiredFlag]},"-1","Y"),"0","N")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(REPLACE([Copy of InspectionRequiredFlag],"-1","Y"),"0","N")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\Derived Column.Inputs[Derived Column Input].Columns[Copy of HazardousMaterialFlag]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of HazardousMaterialFlag"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of HazardousMaterialFlag]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE]([REPLACE](#{Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of HazardousMaterialFlag]},"-1","Y"),"0","N")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(REPLACE([Copy of HazardousMaterialFlag],"-1","Y"),"0","N")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\Derived Column.Inputs[Derived Column Input].Columns[Copy of FabricatedFlag]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of FabricatedFlag"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of FabricatedFlag]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE]([REPLACE](#{Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of FabricatedFlag]},"-1","Y"),"0","N")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(REPLACE([Copy of FabricatedFlag],"-1","Y"),"0","N")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\Derived Column.Inputs[Derived Column Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Name"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]},"\"","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(Name,"\"","")</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Part Table\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Part Table\Derived Column.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Part Table\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Part Table\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Part Table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Part Table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Part Table\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [PartId] FROM [dbo].[DIM_Part_SSIS_IN1239]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT [PartId] FROM [dbo].[DIM_Part_SSIS_IN1239]) [refTable]
+where [refTable].[PartId] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PartId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PartId]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Part Table\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[otusdpsql.Target_B12021_SChauras.B12021_SChauras]"
+                  connectionManagerRefId="Package.ConnectionManagers[otusdpsql.Target_B12021_SChauras.B12021_SChauras]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Part Table\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\Lookup.Inputs[Lookup Input].Columns[Copy of PartId]"
+                      cachedDataType="i4"
+                      cachedName="Copy of PartId"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PartId]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">PartId</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Part Table\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Part Table\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Part Table\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Part Table\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Part Table\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Part Table\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Part Table\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Part Table\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Part Table\Lookup 1"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup 1"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [PartId],[Name] FROM [dbo].[DIM_Part_SSIS_IN1239]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT [PartId],[Name] FROM [dbo].[DIM_Part_SSIS_IN1239]) [refTable]
+where [refTable].[Name] = ? and [refTable].[PartId] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PartId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Name" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]};#{Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PartId]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Part Table\Lookup 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[otusdpsql.Target_B12021_SChauras.B12021_SChauras]"
+                  connectionManagerRefId="Package.ConnectionManagers[otusdpsql.Target_B12021_SChauras.B12021_SChauras]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Part Table\Lookup 1.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\Lookup 1.Inputs[Lookup Input].Columns[Copy of PartId]"
+                      cachedDataType="i4"
+                      cachedName="Copy of PartId"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PartId]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">PartId</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\Lookup 1.Inputs[Lookup Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Name"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Name</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Part Table\Lookup 1.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Part Table\Lookup 1.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Part Table\Lookup 1.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Part Table\Lookup 1.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Part Table\Lookup 1.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Part Table\Lookup 1.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Part Table\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Part Table\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Part Table\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DIM_Part_SSIS_IN1239]
+SET [SecondPrevName] = [PrevName],
+[PrevName] = [Name],
+[Name] = ?
+WHERE [PartId] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Part Table\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[otusdpsql.Target_B12021_SChauras.B12021_SChauras]"
+                  connectionManagerRefId="Package.ConnectionManagers[otusdpsql.Target_B12021_SChauras.B12021_SChauras]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Part Table\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Command.Inputs[OLE DB Command Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of PartId]"
+                      cachedDataType="i4"
+                      cachedName="Copy of PartId"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PartId]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Part Table\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Data Flow Part Table\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Part Table\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Data Flow Part Table\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Part Table\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Part Table\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Part Table\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DIM_Part_SSIS_IN1239]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Part Table\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[otusdpsql.Target_B12021_SChauras.B12021_SChauras]"
+                  connectionManagerRefId="Package.ConnectionManagers[otusdpsql.Target_B12021_SChauras.B12021_SChauras]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PartNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PartNumber"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PartNumber]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PartNumber]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PartSystem]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PartSystem"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PartSystem]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PartSystem]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PartSubSystem]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PartSubSystem"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PartSubSystem]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PartSubSystem]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SupplierCode]"
+                      cachedDataType="r8"
+                      cachedName="SupplierCode"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplierCode]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[SupplierCode]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Description]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Description"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Description]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PlanningLeadtime]"
+                      cachedDataType="r8"
+                      cachedName="PlanningLeadtime"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PlanningLeadtime]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PlanningLeadtime]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UnitPrice]"
+                      cachedDataType="r8"
+                      cachedName="UnitPrice"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Orderpoint]"
+                      cachedDataType="r8"
+                      cachedName="Orderpoint"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Orderpoint]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Orderpoint]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SafetyStockQuantity]"
+                      cachedDataType="r8"
+                      cachedName="SafetyStockQuantity"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SafetyStockQuantity]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[SafetyStockQuantity]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Version]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Version"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Version]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Version]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of PartId]"
+                      cachedDataType="i4"
+                      cachedName="Copy of PartId"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PartId]"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PartId]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of FabricatedFlag]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of FabricatedFlag"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FabricatedFlag]"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of FabricatedFlag]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of PurchasedFlag]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of PurchasedFlag"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PurchasedFlag]"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PurchasedFlag]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of StockedFlag]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of StockedFlag"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StockedFlag]"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of StockedFlag]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of InspectionRequiredFlag]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of InspectionRequiredFlag"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InspectionRequiredFlag]"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of InspectionRequiredFlag]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of HazardousMaterialFlag]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of HazardousMaterialFlag"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HazardousMaterialFlag]"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of HazardousMaterialFlag]" />
+                    <inputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of ENABLED]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of ENABLED"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ENABLED]"
+                      lineageId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ENABLED]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SurrogateKey]"
+                      dataType="i4"
+                      name="SurrogateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PartId]"
+                      dataType="i4"
+                      name="PartId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PartNumber]"
+                      dataType="wstr"
+                      length="255"
+                      name="PartNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PartSystem]"
+                      dataType="wstr"
+                      length="255"
+                      name="PartSystem" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PartSubSystem]"
+                      dataType="wstr"
+                      length="255"
+                      name="PartSubSystem" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplierCode]"
+                      dataType="r8"
+                      name="SupplierCode" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrevName]"
+                      dataType="wstr"
+                      length="255"
+                      name="PrevName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SecondPrevName]"
+                      dataType="wstr"
+                      length="255"
+                      name="SecondPrevName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                      dataType="wstr"
+                      length="255"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PlanningLeadtime]"
+                      dataType="r8"
+                      name="PlanningLeadtime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                      dataType="r8"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Orderpoint]"
+                      dataType="r8"
+                      name="Orderpoint" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SafetyStockQuantity]"
+                      dataType="r8"
+                      name="SafetyStockQuantity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FabricatedFlag]"
+                      dataType="wstr"
+                      length="255"
+                      name="FabricatedFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PurchasedFlag]"
+                      dataType="wstr"
+                      length="255"
+                      name="PurchasedFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StockedFlag]"
+                      dataType="wstr"
+                      length="255"
+                      name="StockedFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InspectionRequiredFlag]"
+                      dataType="wstr"
+                      length="255"
+                      name="InspectionRequiredFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HazardousMaterialFlag]"
+                      dataType="wstr"
+                      length="255"
+                      name="HazardousMaterialFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Version]"
+                      dataType="wstr"
+                      length="255"
+                      name="Version" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ENABLED]"
+                      dataType="wstr"
+                      length="255"
+                      name="ENABLED" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Part Table\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Part Table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Part Table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Part Table\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Part]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Part Table\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[otusdpsql.RALLI.B12021_SChauras]"
+                  connectionManagerRefId="Package.ConnectionManagers[otusdpsql.RALLI.B12021_SChauras]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PartId]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PartId]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PartId]"
+                      name="PartId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PartNumber]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PartNumber]"
+                      length="255"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PartNumber]"
+                      name="PartNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PartSystem]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PartSystem]"
+                      length="255"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PartSystem]"
+                      name="PartSystem"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PartSubSystem]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PartSubSystem]"
+                      length="255"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PartSubSystem]"
+                      name="PartSubSystem"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[SupplierCode]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SupplierCode]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[SupplierCode]"
+                      name="SupplierCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      length="255"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Description]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Description]"
+                      length="255"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Description]"
+                      name="Description"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PlanningLeadtime]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PlanningLeadtime]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PlanningLeadtime]"
+                      name="PlanningLeadtime"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPrice]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPrice]"
+                      name="UnitPrice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Orderpoint]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Orderpoint]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Orderpoint]"
+                      name="Orderpoint"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[SafetyStockQuantity]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SafetyStockQuantity]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[SafetyStockQuantity]"
+                      name="SafetyStockQuantity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[FabricatedFlag]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FabricatedFlag]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[FabricatedFlag]"
+                      name="FabricatedFlag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PurchasedFlag]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PurchasedFlag]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[PurchasedFlag]"
+                      name="PurchasedFlag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[StockedFlag]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StockedFlag]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[StockedFlag]"
+                      name="StockedFlag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[InspectionRequiredFlag]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[InspectionRequiredFlag]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[InspectionRequiredFlag]"
+                      name="InspectionRequiredFlag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[HazardousMaterialFlag]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[HazardousMaterialFlag]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[HazardousMaterialFlag]"
+                      name="HazardousMaterialFlag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Version]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Version]"
+                      length="255"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Version]"
+                      name="Version"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[ENABLED]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ENABLED]"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].Columns[ENABLED]"
+                      name="ENABLED"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PartId]"
+                      dataType="r8"
+                      name="PartId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PartNumber]"
+                      dataType="wstr"
+                      length="255"
+                      name="PartNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PartSystem]"
+                      dataType="wstr"
+                      length="255"
+                      name="PartSystem" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PartSubSystem]"
+                      dataType="wstr"
+                      length="255"
+                      name="PartSubSystem" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SupplierCode]"
+                      dataType="r8"
+                      name="SupplierCode" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Description]"
+                      dataType="wstr"
+                      length="255"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PlanningLeadtime]"
+                      dataType="r8"
+                      name="PlanningLeadtime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
+                      dataType="r8"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Orderpoint]"
+                      dataType="r8"
+                      name="Orderpoint" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SafetyStockQuantity]"
+                      dataType="r8"
+                      name="SafetyStockQuantity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FabricatedFlag]"
+                      dataType="r8"
+                      name="FabricatedFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PurchasedFlag]"
+                      dataType="r8"
+                      name="PurchasedFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StockedFlag]"
+                      dataType="r8"
+                      name="StockedFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[InspectionRequiredFlag]"
+                      dataType="r8"
+                      name="InspectionRequiredFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[HazardousMaterialFlag]"
+                      dataType="r8"
+                      name="HazardousMaterialFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Version]"
+                      dataType="wstr"
+                      length="255"
+                      name="Version" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ENABLED]"
+                      dataType="r8"
+                      name="ENABLED" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PartId]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PartId]"
+                      name="PartId" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PartNumber]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PartNumber]"
+                      name="PartNumber" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PartSystem]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PartSystem]"
+                      name="PartSystem" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PartSubSystem]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PartSubSystem]"
+                      name="PartSubSystem" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SupplierCode]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SupplierCode]"
+                      name="SupplierCode" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Description]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Description]"
+                      name="Description" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PlanningLeadtime]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PlanningLeadtime]"
+                      name="PlanningLeadtime" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
+                      name="UnitPrice" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Orderpoint]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Orderpoint]"
+                      name="Orderpoint" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SafetyStockQuantity]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SafetyStockQuantity]"
+                      name="SafetyStockQuantity" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FabricatedFlag]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FabricatedFlag]"
+                      name="FabricatedFlag" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PurchasedFlag]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PurchasedFlag]"
+                      name="PurchasedFlag" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StockedFlag]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StockedFlag]"
+                      name="StockedFlag" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[InspectionRequiredFlag]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[InspectionRequiredFlag]"
+                      name="InspectionRequiredFlag" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[HazardousMaterialFlag]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[HazardousMaterialFlag]"
+                      name="HazardousMaterialFlag" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Version]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Version]"
+                      name="Version" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ENABLED]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ENABLED]"
+                      name="ENABLED" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Part Table.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Part Table\Derived Column.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Part Table\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Part Table.Paths[Derived Column Output]"
+              endId="Package\Data Flow Part Table\Lookup.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Part Table\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Part Table.Paths[Lookup Match Output]"
+              endId="Package\Data Flow Part Table\Lookup 1.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Part Table\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Part Table.Paths[Lookup No Match Output]"
+              endId="Package\Data Flow Part Table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Data Flow Part Table\Lookup.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Data Flow Part Table.Paths[Lookup No Match Output1]"
+              endId="Package\Data Flow Part Table\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Lookup No Match Output"
+              startId="Package\Data Flow Part Table\Lookup 1.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Data Flow Part Table.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Part Table\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Part Table\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Data Flow Part Table"
+          TopLeft="404.999983906747,144.733334483571" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Part Table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Data Flow Part Table\OLE DB Command"
+          TopLeft="575.833310451774,438.533336818483" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Data Flow Part Table\OLE DB Destination"
+          TopLeft="256.66665646765,358.800002851486" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Data Flow Part Table\Data Conversion"
+          TopLeft="404.999983906747,97.0666674380833" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Data Flow Part Table\Lookup 1"
+          TopLeft="596.666642957265,356.200002830824" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Data Flow Part Table\OLE DB Source"
+          TopLeft="410.833317008284,21.6666668388579" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Data Flow Part Table\Derived Column"
+          TopLeft="408.333317107625,175.066668057971" />
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Data Flow Part Table\Lookup"
+          TopLeft="420.83331661092,241.800001921654" />
+        <EdgeLayout
+          Id="Package\Data Flow Part Table.Paths[OLE DB Source Output]"
+          TopLeft="484.916650457515,63.2666668388579">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.8000005992254"
+              Start="0,0"
+              End="0,26.3000005992254">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.3000005992254" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Part Table.Paths[Lookup No Match Output1]"
+          TopLeft="658.249976704519,397.800002830824">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.7333339876596"
+              Start="0,0"
+              End="0,33.2333339876596">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.2333339876596" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,10.8119794938298,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Part Table.Paths[Lookup No Match Output]"
+          TopLeft="477.23331661092,283.400001921654">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-134.96666014327,75.4000009298325"
+              Start="0,0"
+              End="-134.96666014327,67.9000009298325">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.7000004649163" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.7000004649163"
+                    Point2="0,37.7000004649163"
+                    Point3="-4,37.7000004649163" />
+                  <mssgle:LineSegment
+                    End="-130.96666014327,37.7000004649163" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-130.96666014327,37.7000004649163"
+                    Point2="-134.96666014327,37.7000004649163"
+                    Point3="-134.96666014327,41.7000004649163" />
+                  <mssgle:LineSegment
+                    End="-134.96666014327,67.9000009298325" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-123.289716790385,42.7000004649163,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Part Table.Paths[Lookup Match Output]"
+          TopLeft="494.699983277586,283.400001921654">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="162.366659679678,72.8000009091698"
+              Start="0,0"
+              End="162.366659679678,65.3000009091698">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.7309094622064" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.7309094622064"
+                    Point2="0,29.7309094622064"
+                    Point3="4,29.7309094622064" />
+                  <mssgle:LineSegment
+                    End="158.366659679678,29.7309094622064" />
+                  <mssgle:CubicBezierSegment
+                    Point1="158.366659679678,29.7309094622064"
+                    Point2="162.366659679678,29.7309094622064"
+                    Point3="162.366659679678,33.7309094622064" />
+                  <mssgle:LineSegment
+                    End="162.366659679678,65.3000009091698" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="32.9919431210891,34.7309094622064,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Part Table.Paths[Derived Column Output]"
+          TopLeft="480.983316859272,216.666668057971">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.1333338636822"
+              Start="0,0"
+              End="0,17.6333338636822">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.6333338636822" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Part Table.Paths[Data Conversion Output]"
+          TopLeft="483.866650507186,138.666667438083">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.4000006198882"
+              Start="0,0"
+              End="0,28.9000006198882">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.9000006198882" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Part Table\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Part Table\Lookup 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Part Table\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Part Table\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

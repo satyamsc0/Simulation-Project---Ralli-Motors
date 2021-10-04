@@ -1,0 +1,1082 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/13/2021 2:39:45 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-UCIG1N9"
+  DTS:CreatorName="DESKTOP-UCIG1N9\Satyam Chaurasiya"
+  DTS:DTSID="{421E5ACB-E35C-4035-BE4F-350A6945B7C3}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.167"
+  DTS:LocaleID="16393"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{470A73ED-EC53-4D91-9DDC-5B36237572C3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[otusdpsql.RALLI.B12021_SChauras]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{002F1FED-6CB6-4609-B922-1F9518D80AFA}"
+      DTS:ObjectName="otusdpsql.RALLI.B12021_SChauras">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=otusdpsql;User ID=B12021_SChauras;Initial Catalog=RALLI;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT1JwUWBw1EeQiy06+EJ2JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA5QSn2dJHY7tWGjSgHlMiQS0zD/p4BjX9kR1V4pD656wAAAAAOgAAAAAIAACAAAABcKqIW53IV7k73qkdOCy1QDFAPwWq3qa3qebs5vf7sICAAAAAORw2FyZqKAcODtVNtdeJO/eIGsLtv4tIXlVGyEzwjNUAAAAClS4ow5nrSZ/YH7mBnyQYntHjx2Jgln3yP4C7NRE4feajjsJXb4zw2yjmCqBhqgv1j6rXr1lBmYOQrPwOI0rMG</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[otusdpsql.Target_B12021_SChauras.B12021_SChauras]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{76853037-DB06-46FE-BDD1-33EE1B856CCF}"
+      DTS:ObjectName="otusdpsql.Target_B12021_SChauras.B12021_SChauras">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=otusdpsql;User ID=B12021_SChauras;Initial Catalog=Target_B12021_SChauras;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT1JwUWBw1EeQiy06+EJ2JQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB5VwOVJkfIB6YZSF7yrIfB38F40/HXBISsIkCzabAlZAAAAAAOgAAAAAIAACAAAACAKFeYCpFe3fbhfaFLf9JBIaweSS0C8iu+2uLCJuamfyAAAAAN06ySwtzRhvrNXppnNjz3q/1Y4oU8xTF+vgEgOkh4DEAAAAD6h1uNvCI9UQVsHEhT1CNBPVuo8TTszJTt7kX88B25BR1IfS7oEWAmKpxJqofXCE7SShlAS6emwCvjdKrEcwnk</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow OrderJobServiceCorrectionPart"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{6D843D47-2A30-4FB5-B334-E9FE17CACAB3}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow OrderJobServiceCorrectionPart"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Inputs[Data Conversion Input].Columns[Enabled]"
+                      cachedDataType="bool"
+                      cachedName="Enabled"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[Enabled]" />
+                    <inputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Inputs[Data Conversion Input].Columns[IsCustomPart]"
+                      cachedDataType="bool"
+                      cachedName="IsCustomPart"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[IsCustomPart]" />
+                    <inputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Inputs[Data Conversion Input].Columns[IsInventoryConsumed]"
+                      cachedDataType="bool"
+                      cachedName="IsInventoryConsumed"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[IsInventoryConsumed]" />
+                    <inputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Inputs[Data Conversion Input].Columns[Partnumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="Partnumber"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[Partnumber]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Enabled]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Enabled]"
+                      name="Copy of Enabled"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[Enabled]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IsCustomPart]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IsCustomPart]"
+                      name="Copy of IsCustomPart"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[IsCustomPart]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IsInventoryConsumed]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IsInventoryConsumed]"
+                      name="Copy of IsInventoryConsumed"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[IsInventoryConsumed]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Partnumber]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Partnumber]"
+                      name="Copy of Partnumber"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[Partnumber]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow OrderJobServiceCorrectionPart\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow OrderJobServiceCorrectionPart\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\Derived Column.Inputs[Derived Column Input].Columns[Unitprice]"
+                      cachedDataType="numeric"
+                      cachedName="Unitprice"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[Unitprice]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ROUND](#{Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[Unitprice]},2)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ROUND(Unitprice,2)</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\Derived Column.Inputs[Derived Column Input].Columns[Partcost]"
+                      cachedDataType="numeric"
+                      cachedName="Partcost"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[Partcost]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ROUND](#{Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[Partcost]},2)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ROUND(Partcost,2)</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\Derived Column.Inputs[Derived Column Input].Columns[Copy of Enabled]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Enabled"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Enabled]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE]([REPLACE](#{Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Enabled]},"1","Y"),"0","N")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(REPLACE([Copy of Enabled],"1","Y"),"0","N")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\Derived Column.Inputs[Derived Column Input].Columns[Copy of IsCustomPart]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of IsCustomPart"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IsCustomPart]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE]([REPLACE](#{Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IsCustomPart]},"1","Y"),"0","N")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(REPLACE([Copy of IsCustomPart],"1","Y"),"0","N")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\Derived Column.Inputs[Derived Column Input].Columns[Copy of IsInventoryConsumed]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of IsInventoryConsumed"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IsInventoryConsumed]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE]([REPLACE](#{Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IsInventoryConsumed]},"1","Y"),"0","N")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(REPLACE([Copy of IsInventoryConsumed],"1","Y"),"0","N")</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow OrderJobServiceCorrectionPart\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow OrderJobServiceCorrectionPart\Derived Column.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow OrderJobServiceCorrectionPart\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow OrderJobServiceCorrectionPart\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FACT_OrderJobServiceCorrectionPart_SSIS_IN1239]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[otusdpsql.Target_B12021_SChauras.B12021_SChauras]"
+                  connectionManagerRefId="Package.ConnectionManagers[otusdpsql.Target_B12021_SChauras.B12021_SChauras]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OrderJobPartId]"
+                      cachedDataType="i4"
+                      cachedName="OrderJobPartId"
+                      externalMetadataColumnId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderJobPartId]"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderJobPartId]" />
+                    <inputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OrderJobServiceCorrectionId]"
+                      cachedDataType="i4"
+                      cachedName="OrderJobServiceCorrectionId"
+                      externalMetadataColumnId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderJobServiceCorrectionId]"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderJobServiceCorrectionId]" />
+                    <inputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Quantity]"
+                      cachedDataType="numeric"
+                      cachedName="Quantity"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Unitprice]"
+                      cachedDataType="numeric"
+                      cachedName="Unitprice"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Unitprice]"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[Unitprice]" />
+                    <inputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Partcost]"
+                      cachedDataType="numeric"
+                      cachedName="Partcost"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Partcost]"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[Partcost]" />
+                    <inputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[InventoryQuantityConsumed]"
+                      cachedDataType="numeric"
+                      cachedName="InventoryQuantityConsumed"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InventoryQuantityConsumed]"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[InventoryQuantityConsumed]" />
+                    <inputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Enabled]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Enabled"
+                      externalMetadataColumnId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Enabled]"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Enabled]" />
+                    <inputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of IsCustomPart]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of IsCustomPart"
+                      externalMetadataColumnId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsCustomPart]"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IsCustomPart]" />
+                    <inputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of IsInventoryConsumed]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of IsInventoryConsumed"
+                      externalMetadataColumnId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsInventoryConsumed]"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IsInventoryConsumed]" />
+                    <inputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Partnumber]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Partnumber"
+                      externalMetadataColumnId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Partnumber]"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Partnumber]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderJobPartId]"
+                      dataType="i4"
+                      name="OrderJobPartId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderJobServiceCorrectionId]"
+                      dataType="i4"
+                      name="OrderJobServiceCorrectionId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Partnumber]"
+                      dataType="wstr"
+                      length="255"
+                      name="Partnumber" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      dataType="numeric"
+                      name="Quantity"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Unitprice]"
+                      dataType="numeric"
+                      name="Unitprice"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Enabled]"
+                      dataType="wstr"
+                      length="255"
+                      name="Enabled" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Partcost]"
+                      dataType="numeric"
+                      name="Partcost"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsCustomPart]"
+                      dataType="wstr"
+                      length="255"
+                      name="IsCustomPart" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InventoryQuantityConsumed]"
+                      dataType="numeric"
+                      name="InventoryQuantityConsumed"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsInventoryConsumed]"
+                      dataType="wstr"
+                      length="255"
+                      name="IsInventoryConsumed" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[OrderJobServiceCorrectionPart]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[otusdpsql.RALLI.B12021_SChauras]"
+                  connectionManagerRefId="Package.ConnectionManagers[otusdpsql.RALLI.B12021_SChauras]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderJobPartId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderJobPartId]"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderJobPartId]"
+                      name="OrderJobPartId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderJobServiceCorrectionId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderJobServiceCorrectionId]"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderJobServiceCorrectionId]"
+                      name="OrderJobServiceCorrectionId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[Partnumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Partnumber]"
+                      length="25"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[Partnumber]"
+                      name="Partnumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quantity]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quantity]"
+                      name="Quantity"
+                      precision="18"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[Unitprice]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Unitprice]"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[Unitprice]"
+                      name="Unitprice"
+                      precision="18"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[Enabled]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Enabled]"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[Enabled]"
+                      name="Enabled"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[Partcost]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Partcost]"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[Partcost]"
+                      name="Partcost"
+                      precision="18"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[IsCustomPart]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IsCustomPart]"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[IsCustomPart]"
+                      name="IsCustomPart"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[InventoryQuantityConsumed]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[InventoryQuantityConsumed]"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[InventoryQuantityConsumed]"
+                      name="InventoryQuantityConsumed"
+                      precision="18"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[IsInventoryConsumed]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IsInventoryConsumed]"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].Columns[IsInventoryConsumed]"
+                      name="IsInventoryConsumed"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderJobPartId]"
+                      dataType="i4"
+                      name="OrderJobPartId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderJobServiceCorrectionId]"
+                      dataType="i4"
+                      name="OrderJobServiceCorrectionId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Partnumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="Partnumber" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
+                      dataType="numeric"
+                      name="Quantity"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Unitprice]"
+                      dataType="numeric"
+                      name="Unitprice"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Enabled]"
+                      dataType="bool"
+                      name="Enabled" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Partcost]"
+                      dataType="numeric"
+                      name="Partcost"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IsCustomPart]"
+                      dataType="bool"
+                      name="IsCustomPart" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[InventoryQuantityConsumed]"
+                      dataType="numeric"
+                      name="InventoryQuantityConsumed"
+                      precision="18"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IsInventoryConsumed]"
+                      dataType="bool"
+                      name="IsInventoryConsumed" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderJobPartId]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderJobPartId]"
+                      name="OrderJobPartId" />
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderJobServiceCorrectionId]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderJobServiceCorrectionId]"
+                      name="OrderJobServiceCorrectionId" />
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Partnumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Partnumber]"
+                      name="Partnumber" />
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Quantity]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Quantity]"
+                      name="Quantity"
+                      precision="18"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Unitprice]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Unitprice]"
+                      name="Unitprice"
+                      precision="18"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Enabled]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Enabled]"
+                      name="Enabled" />
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Partcost]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Partcost]"
+                      name="Partcost"
+                      precision="18"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IsCustomPart]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IsCustomPart]"
+                      name="IsCustomPart" />
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[InventoryQuantityConsumed]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[InventoryQuantityConsumed]"
+                      name="InventoryQuantityConsumed"
+                      precision="18"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IsInventoryConsumed]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IsInventoryConsumed]"
+                      name="IsInventoryConsumed" />
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow OrderJobServiceCorrectionPart.Paths[Data Conversion Output]"
+              endId="Package\Data Flow OrderJobServiceCorrectionPart\Derived Column.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow OrderJobServiceCorrectionPart.Paths[Derived Column Output]"
+              endId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow OrderJobServiceCorrectionPart\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow OrderJobServiceCorrectionPart.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="272.8,41.6"
+          Id="Package\Data Flow OrderJobServiceCorrectionPart"
+          TopLeft="335.833319988516,58.0666671281391" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow OrderJobServiceCorrectionPart">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source"
+          TopLeft="470.833314624098,44.20000035127" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Data Flow OrderJobServiceCorrectionPart\Data Conversion"
+          TopLeft="464.999981522561,121.333334297604" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Data Flow OrderJobServiceCorrectionPart\Derived Column"
+          TopLeft="461.666648321682,198.466668243938" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination"
+          TopLeft="451.666648719046,275.600002190272" />
+        <EdgeLayout
+          Id="Package\Data Flow OrderJobServiceCorrectionPart.Paths[OLE DB Source Output]"
+          TopLeft="544.91664807333,85.8000003512701">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.533333946334"
+              Start="0,0"
+              End="0,28.033333946334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.033333946334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow OrderJobServiceCorrectionPart.Paths[Data Conversion Output]"
+          TopLeft="540.533314922121,162.933334297604">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.533333946334"
+              Start="0,0"
+              End="0,28.033333946334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.033333946334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow OrderJobServiceCorrectionPart.Paths[Derived Column Output]"
+          TopLeft="537.666648520364,240.066668243938">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.533333946334"
+              Start="0,0"
+              End="0,28.033333946334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.033333946334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow OrderJobServiceCorrectionPart\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
